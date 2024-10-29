@@ -1,0 +1,5 @@
+footer {
+  height: 170px;
+  padding: 15px;
+  background-color: var(--navbar-footer-color);
+}
