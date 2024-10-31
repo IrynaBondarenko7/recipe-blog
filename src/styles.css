@@ -13,6 +13,17 @@ body {
   color: var(--body-text-color) !important;
   margin-top: 100px !important;
 }
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.root {
+  flex-grow: 1;
+}
+
 .site-logo {
   padding: 5px 20px;
   border-radius: 20px;
