@@ -55,6 +55,14 @@ app-root {
   background-color: var(--primary-color);
 }
 
+.bg-secondary-theme {
+  background-color: var(--secondary-color);
+}
+
+.text-theme-primary {
+  color: var(--primary-color);
+}
+
 .subsc-input {
   padding: 5px 20px;
   font-size: 13px;
@@ -73,6 +81,7 @@ app-root {
   width: 100%;
   display: block;
 }
-.btn-sub-comment {
+.btn-sub-comment,
+.btn-sub-back {
   width: 200px;
 }
