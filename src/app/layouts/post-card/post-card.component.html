@@ -5,7 +5,10 @@
       <small class="bg-light text-danger text-center">{{
         postData.category.category
       }}</small>
-      <small class="bg-light text-success text-center">Featured</small>
+      @if(postData.isFeatured){<small class="bg-light text-success text-center"
+        >Featured</small
+      >}
+
       <small class="bg-light text-ingo text-center"
         >Views - {{ postData.views }}</small
       >

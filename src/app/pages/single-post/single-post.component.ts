@@ -28,12 +28,18 @@ export class SinglePostComponent {
 
   ngOnInit() {
     this.route.params.subscribe((param) => {
-      this.postService.loadOnePost(param['id']).subscribe((post) => {
-        this.postData = post;
-        this.loadSimilarPosts(
-          this.postData?.category.categoryId!,
-          this.postData?.id!
-        );
+      const postId = param['id'];
+
+      this.postService.countViews(postId).subscribe({
+        next: () => {
+          this.postService.loadOnePost(postId).subscribe((post) => {
+            this.postData = post;
+            this.loadSimilarPosts(
+              this.postData?.category.categoryId!,
+              this.postData?.id!
+            );
+          });
+        },
       });
     });
   }

@@ -9,6 +9,8 @@ import {
   limit,
   doc,
   getDoc,
+  updateDoc,
+  increment,
 } from '@angular/fire/firestore';
 import { Observable, from, map } from 'rxjs';
 import { Post } from '../models/post';
@@ -91,25 +93,6 @@ export class PostsService {
     );
   }
 
-  // loadSimilar(categoryId: string): Observable<Post[]> {
-  //   const postsCollection = collection(this.firestore, 'posts');
-
-  //   const featuredPostsQuery = query(
-  //     postsCollection,
-  //     where('category.categoryId', '==', categoryId),
-  //     limit(4)
-  //   );
-
-  //   return from(
-  //     getDocs(featuredPostsQuery).then((snapshot) => {
-  //       const posts: Post[] = [];
-  //       snapshot.forEach((doc) => {
-  //         posts.push({ id: doc.id, ...doc.data() } as Post);
-  //       });
-  //       return posts;
-  //     })
-  //   );
-  // }
   loadSimilar(categoryId: string, postId: string): Observable<Post[]> {
     const postsCollection = collection(this.firestore, 'posts');
 
@@ -129,6 +112,16 @@ export class PostsService {
         });
 
         return posts;
+      })
+    );
+  }
+
+  countViews(postId: string): Observable<void> {
+    const postRef = doc(this.firestore, 'posts', postId);
+
+    return from(
+      updateDoc(postRef, {
+        views: increment(1),
       })
     );
   }
