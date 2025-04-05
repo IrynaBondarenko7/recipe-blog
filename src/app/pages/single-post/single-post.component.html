@@ -3,36 +3,23 @@
     <div class="col-md-9">
       <div class="card">
         <img
-          src="https://images.pexels.com/photos/4966597/pexels-photo-4966597.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          src="{{ postData?.postImgPath }}"
           alt=""
           class="card-img-top img-fluid"
         />
         <div class="card-body shadow-effect">
-          <small class="bg-light text-danger text-center ms-2">Design</small>
+          <small class="bg-light text-danger text-center ms-2">{{
+            postData?.category?.category
+          }}</small>
           <small class="bg-light text-sucess text-center ms-2">Featured</small>
           <small class="bg-light text-info text-center ms-2"
-            >Views-100,256</small
+            >Views-{{ postData?.views }}</small
           >
           <small class="bg-light text-warning text-center ms-2"
-            >LAST UPDATED - SEP 20,2024</small
+            >LAST UPDATED - {{ postData?.createdAt?.toMillis() | date }}</small
           >
-          <h1 class="my-3">Borscht garnished with sour cream</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
-            dolorem voluptas. Tenetur alias tempora qui eum suscipit blanditiis
-            ab est libero, unde veniam iusto ratione, a consequuntur nihil rerum
-            necessitatibus. Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Iusto, dolorem voluptas. Tenetur alias tempora qui eum
-            suscipit blanditiis ab est libero, unde veniam iusto ratione, a
-            consequuntur nihil rerum necessitatibus. Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Iusto, dolorem voluptas. Tenetur alias
-            tempora qui eum suscipit blanditiis ab est libero, unde veniam iusto
-            ratione, a consequuntur nihil rerum necessitatibus. Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Iusto, dolorem
-            voluptas. Tenetur alias tempora qui eum suscipit blanditiis ab est
-            libero, unde veniam iusto ratione, a consequuntur nihil rerum
-            necessitatibus.
-          </p>
+          <h1 class="my-3">{{ postData?.title }}</h1>
+          <p [innerHTML]="postData?.content"></p>
         </div>
       </div>
       <app-comment-form></app-comment-form>
@@ -40,9 +27,9 @@
     </div>
 
     <div class="col-md-3">
-      <app-post-card></app-post-card>
-      <app-post-card></app-post-card>
-      <app-post-card></app-post-card>
+      @for(post of similarPosts; track post.id){
+      <app-post-card [postData]="post"></app-post-card>
+      }
     </div>
   </div>
 </div>

@@ -9,7 +9,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'category/:category/:id', component: SingleCategoryComponent },
-  { path: 'post', component: SinglePostComponent },
+  { path: 'post/:id', component: SinglePostComponent },
   { path: 'about', component: AboutUsComponent },
   { path: 'terms-contidions', component: TermsAndConditionsComponent },
 ];
