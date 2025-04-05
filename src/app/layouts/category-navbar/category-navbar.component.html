@@ -3,7 +3,11 @@
     <ul class="navbar-nav d-flex flex-row gap-3">
       @for(category of categoryArray; track category.id){
       <li class="nav-item">
-        <a href="" class="nav-link">{{ category.category }}</a>
+        <a
+          class="nav-link"
+          [routerLink]="['/category', category.category, category.id]"
+          >{{ category.category }}</a
+        >
       </li>
       }
     </ul>

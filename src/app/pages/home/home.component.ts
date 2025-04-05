@@ -22,7 +22,6 @@ export class HomeComponent {
     });
 
     this.postService.loadLatestPosts().subscribe((posts) => {
-      console.log(posts);
       this.latestPosts = posts;
     });
   }

@@ -55,4 +55,23 @@ export class PostsService {
       })
     );
   }
+
+  loadCategoryPosts(categoryId: string): Observable<Post[]> {
+    const postsCollection = collection(this.firestore, 'posts');
+
+    const featuredPostsQuery = query(
+      postsCollection,
+      where('category.categoryId', '==', categoryId)
+    );
+
+    return from(
+      getDocs(featuredPostsQuery).then((snapshot) => {
+        const posts: Post[] = [];
+        snapshot.forEach((doc) => {
+          posts.push({ id: doc.id, ...doc.data() } as Post);
+        });
+        return posts;
+      })
+    );
+  }
 }
