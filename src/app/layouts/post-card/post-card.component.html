@@ -1,24 +1,21 @@
 <div class="card shadow-effect">
-  <img
-    src="https://images.pexels.com/photos/18955541/pexels-photo-18955541/free-photo-of-a-bowl-of-borscht-garnished-with-sour-cream-and-herbs.jpeg"
-    alt="post-image"
-    class="card-img-top"
-  />
+  <img src="{{ postData.postImgPath }}" alt="post-image" class="card-img-top" />
   <div class="card-body">
     <div class="d-flex gap-3">
-      <small class="bg-light text-danger text-center">Design</small>
+      <small class="bg-light text-danger text-center">{{
+        postData.category.category
+      }}</small>
       <small class="bg-light text-success text-center">Featured</small>
-      <small class="bg-light text-ingo text-center">Views - 100,256</small>
+      <small class="bg-light text-ingo text-center"
+        >Views - {{ postData.views }}</small
+      >
     </div>
-    <h5 class="mt-2">Borscht garnished with sour cream</h5>
+    <h5 class="mt-2">{{ postData.title }}</h5>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo non
-      dolor ad voluptatibus rerum atque placeat nesciunt similique quisquam
-      tenetur, ea exercitationem cumque. Ipsa cumque eveniet eaque, odio
-      explicabo dolorem.
+      {{ postData.excerpt }}
     </p>
     <small class="bg-light text-warning text-center"
-      >LAST UPDATED - Sep 20, 2024</small
+      >LAST UPDATED - {{ postData.createdAt.toMillis() | date }}</small
     >
   </div>
 </div>

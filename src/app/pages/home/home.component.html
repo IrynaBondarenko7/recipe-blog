@@ -8,18 +8,11 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-lg-3">
-      <app-post-card></app-post-card>
+    @for(featuredPost of featuredPosts; track featuredPost.id){
+    <div class="col-md-4 mt-3">
+      <app-post-card [postData]="featuredPost"></app-post-card>
     </div>
-    <div class="col-lg-3">
-      <app-post-card></app-post-card>
-    </div>
-    <div class="col-lg-3">
-      <app-post-card></app-post-card>
-    </div>
-    <div class="col-lg-3">
-      <app-post-card></app-post-card>
-    </div>
+    }
   </div>
 </section>
 <section class="container mt-5">
@@ -28,23 +21,10 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
   </div>
   <div class="row">
+    @for(latestPost of latestPosts; track latestPost.id){
     <div class="col-md-4 mt-3">
-      <app-post-card></app-post-card>
+      <app-post-card [postData]="latestPost"></app-post-card>
     </div>
-    <div class="col-md-4 mt-3">
-      <app-post-card></app-post-card>
-    </div>
-    <div class="col-md-4 mt-3">
-      <app-post-card></app-post-card>
-    </div>
-    <div class="col-md-4 mt-3">
-      <app-post-card></app-post-card>
-    </div>
-    <div class="col-md-4 mt-3">
-      <app-post-card></app-post-card>
-    </div>
-    <div class="col-md-4 mt-3">
-      <app-post-card></app-post-card>
-    </div>
+    }
   </div>
 </section>
