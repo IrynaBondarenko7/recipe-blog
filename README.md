@@ -1,27 +1,28 @@
-# RecipeBlog
+# Recipe Blog App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
+This is a Recipe Blog App where users can explore a wide range of recipes. The app's homepage features "Featured Posts" and "Latest Posts" to keep the content dynamic and fresh. Users can also browse recipes by categories and discover new cooking ideas easily.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Featured Posts & Latest Posts**: The homepage displays two sections, "Featured Posts" and "Latest Posts," showcasing the most popular and newest recipes.
+- **Recipe Categories**: Users can filter and browse recipes by different categories for a more organized experience.
+- **Recipe Recommendations**: When viewing an individual recipe, users are provided with recommendations for similar recipes within the same category to enhance exploration.
+- **Dashboard for Content Management**: Recipes can be created, edited, and published via an easy-to-use dashboard interface.
+- **Automatic View Count**: Each post has a view count that updates automatically every time the post is visited, providing insights into its popularity.
+- **Firebase Integration**: All posts are fetched from a Firebase database, ensuring real-time data updates and smooth performance.
 
-## Code scaffolding
+## Technologies Used
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Angular**: A powerful front-end framework for building dynamic and responsive user interfaces.
+- **Bootstrap**: A CSS framework for designing sleek and responsive layouts with minimal effort.
+- **Firebase**: A cloud-based platform used for storing and managing blog posts and user data, with real-time database features.
 
-## Build
+## How to Run the App
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. Clone the repository.
+2. Install the required dependencies:
+   `npm install`
+3. Set up Firebase and configure it in the app.
+4. Run the application:
+   `ng serve`
+5. Open the app in your browser at `http://localhost:4200`.
