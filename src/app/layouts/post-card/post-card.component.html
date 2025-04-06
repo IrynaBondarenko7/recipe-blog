@@ -1,6 +1,6 @@
-<div class="card shadow-effect" [routerLink]="['/post', postData.id]">
+<div class="card shadow-effect h-100" [routerLink]="['/post', postData.id]">
   <img src="{{ postData.postImgPath }}" alt="post-image" class="card-img-top" />
-  <div class="card-body">
+  <div class="card-body d-flex flex-column">
     <div class="d-flex gap-3">
       <small class="bg-light text-danger text-center">{{
         postData.category.category
@@ -17,7 +17,7 @@
     <p>
       {{ postData.excerpt }}
     </p>
-    <small class="bg-light text-warning text-center"
+    <small class="bg-light text-warning text-center mt-auto"
       >LAST UPDATED - {{ postData.createdAt.toMillis() | date }}</small
     >
   </div>

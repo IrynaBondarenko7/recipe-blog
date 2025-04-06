@@ -9,7 +9,7 @@
   </div>
   <div class="row">
     @for(featuredPost of featuredPosts; track featuredPost.id){
-    <div class="col-md-4 mt-3">
+    <div class="col-md-3 mt-3 d-flex">
       <app-post-card [postData]="featuredPost"></app-post-card>
     </div>
     }
