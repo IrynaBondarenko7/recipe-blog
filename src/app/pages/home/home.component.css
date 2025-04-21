@@ -1,4 +1,10 @@
 .featured-section {
-  padding: 0 130px 130px 130px;
+  padding: 0 1rem 3rem 1rem;
   background-color: var(--primary-color);
+}
+
+@media (min-width: 1024px) {
+  .featured-section {
+    padding: 0 130px 130px 130px;
+  }
 }

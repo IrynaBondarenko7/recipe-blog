@@ -1,4 +1,9 @@
 header {
-  height: 120px;
   background-color: var(--navbar-footer-color) !important;
+}
+
+@media (min-width: 768px) {
+  header {
+    height: 120px;
+  }
 }

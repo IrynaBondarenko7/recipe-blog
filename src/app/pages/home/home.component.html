@@ -3,13 +3,16 @@
     <div class="row">
       <div class="col-md-12 text-center mt-5 text-white">
         <h2>Featured Posts</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <p>
+          A handpicked selection of our most delicious recipes. Discover new
+          flavors and get inspired to create something amazing in your kitchen!
+        </p>
       </div>
     </div>
   </div>
   <div class="row">
     @for(featuredPost of featuredPosts; track featuredPost.id){
-    <div class="col-md-3 mt-3 d-flex">
+    <div class="col-12 col-md-6 col-xl-3 mt-3 d-flex">
       <app-post-card [postData]="featuredPost"></app-post-card>
     </div>
     }
@@ -18,7 +21,10 @@
 <section class="container mt-5">
   <div class="col-md-12 text-center">
     <h2>Latest Posts</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <p>
+      Check out our newest recipes — fresh from the kitchen! From quick meals to
+      sweet treats, there's something tasty waiting for you.
+    </p>
   </div>
   <div class="row">
     @for(latestPost of latestPosts; track latestPost.id){
