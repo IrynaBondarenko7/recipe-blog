@@ -1,26 +1,29 @@
 <div class="container">
   <div class="row">
     <div class="col-md-9">
-      <div class="card">
+      <div class="card mt-5 mt-md-0">
         <img
           src="{{ postData?.postImgPath }}"
           alt=""
           class="card-img-top img-fluid"
         />
         <div class="card-body shadow-effect">
-          <small class="bg-light text-danger text-center ms-2">{{
-            postData?.category?.category
-          }}</small>
-          @if(postData?.isFeatured){
-          <small class="bg-light text-sucess text-center ms-2">Featured</small>
-          }
+          <div class="d-flex flex-wrap align-items-center gap-3 mb-3">
+            <small class="bg-light text-danger text-center">{{
+              postData?.category?.category
+            }}</small>
+            @if(postData?.isFeatured){
+            <small class="bg-light text-sucess text-center">Featured</small>
+            }
 
-          <small class="bg-light text-info text-center ms-2"
-            >Views-{{ postData?.views }}</small
-          >
-          <small class="bg-light text-warning text-center ms-2"
-            >LAST UPDATED - {{ postData?.createdAt?.toMillis() | date }}</small
-          >
+            <small class="bg-light text-info text-center"
+              >Views-{{ postData?.views }}</small
+            >
+            <small class="bg-light text-warning text-center"
+              >LAST UPDATED -
+              {{ postData?.createdAt?.toMillis() | date }}</small
+            >
+          </div>
           <h1 class="my-3">{{ postData?.title }}</h1>
           <p [innerHTML]="postData?.content"></p>
         </div>
@@ -29,7 +32,7 @@
       <app-comments-list></app-comments-list>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-3 d-flex flex-column gap-3 mt-5 mt-md-0">
       @for(post of similarPosts; track post.id){
       <app-post-card [postData]="post"></app-post-card>
       }
